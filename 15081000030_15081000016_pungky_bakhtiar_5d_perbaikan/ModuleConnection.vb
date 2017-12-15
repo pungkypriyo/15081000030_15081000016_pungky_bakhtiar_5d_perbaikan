@@ -9,7 +9,14 @@ Module ModuleConnection
 
     'MENGKONEKSIKAN DATABASE
     Sub connectionDB()
-        Dim stringDB As String = "server=localhost; user=root; password=; database=testapp"
+        'Dim stringDB As String = "server=localhost; user=root; password=; database=testapp"
+
+        Dim stringDB, dbServer, dbUser, dbPass, dbName As String
+        dbServer = "localhost"
+        dbUser = "root"
+        dbPass = ""
+        dbName = "testapp"
+        stringDB = "server=" & dbServer & "; user=" & dbUser & "; password=" & dbPass & "; database=" & dbName
         connection = New MySqlConnection(stringDB)
         Try
             If connection.State = ConnectionState.Closed Then
